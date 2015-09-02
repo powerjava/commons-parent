@@ -245,7 +245,7 @@ limitations under the License.
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-release-plugin</artifactId>
                 <configuration>
-                    <tagBase>https://github.com/powerjava/commons-parent/tags/</tagBase>
+                    <tagBase>https://github.com/powerjava/commons-parent.git/tags/</tagBase>
                 </configuration>
             </plugin>
         </plugins>
@@ -291,7 +291,7 @@ limitations under the License.
                     <artifactId>maven-release-plugin</artifactId>
                     <version>2.5.2</version>
                     <configuration>
-                        <tagBase>https://github.com/powerjava/commons-parent/tags/</tagBase>
+                        <tagBase>https://github.com/powerjava/commons-parent.git/tags/</tagBase>
                     </configuration>
                 </plugin>
 
