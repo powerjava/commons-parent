@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/commons-jredis/commons-jredis.iml" filepath="$PROJECT_DIR$/commons-jredis/commons-jredis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/commons-lang/commons-lang.iml" filepath="$PROJECT_DIR$/commons-lang/commons-lang.iml" />
+      <module fileurl="file://$PROJECT_DIR$/commons-parent.iml" filepath="$PROJECT_DIR$/commons-parent.iml" />
+    </modules>
+  </component>
+</project>

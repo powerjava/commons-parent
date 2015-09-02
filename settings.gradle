@@ -1,0 +1,6 @@
+rootProject.name = 'commons-parent'
+include ':commons-lang'
+include ':commons-jedis'
+
+project(':commons-lang').projectDir = "$rootDir/commons-lang" as File
+project(':commons-jedis').projectDir = "$rootDir/commons-jredis" as File
