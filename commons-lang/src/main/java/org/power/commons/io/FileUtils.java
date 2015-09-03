@@ -20,8 +20,11 @@ package org.power.commons.io;
 
 import org.apache.commons.lang3.StringUtils;
 import org.power.commons.lang.util.IllegalPathException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -30,7 +33,8 @@ import java.util.regex.Pattern;
  *
  * @author Geiger
  */
-public class FileUtils {
+public class FileUtils extends org.apache.commons.io.FileUtils{
+    private static final Logger logger = LoggerFactory.getLogger(FileUtils.class);
 
     // ==========================================================================
     // 规格化路径。
@@ -545,6 +549,42 @@ public class FileUtils {
         }
 
         return url.substring(0, index) + normalizeAbsolutePath(url.substring(index) + "/../" + relativePath);
+    }
+
+    /**
+     * http://blog.csdn.net/very365_1208/article/details/8824033
+     * http://www.avajava.com/tutorials/lessons/whats-a-quick-way
+     * -to-tell-if-the-contents-of-two-files-are-identical-or-not.html
+     *
+     * @param oldFile
+     * @param newFile
+     * @return
+     */
+    public static boolean isFileEqual(File oldFile, File newFile) {
+
+        try {
+
+            return contentEquals(oldFile, newFile);
+
+        } catch (IOException e) {
+
+            logger.warn(e.toString());
+            return false;
+        }
+
+    }
+
+    /**
+     * 使用jar包：commons-codec-2.4.jar的md5比较方法 <br/>
+     * http://blog.csdn.net/very365_1208/article/details/8824033
+     *
+     * @param oldName
+     * @param newName
+     * @return
+     */
+    public static boolean isFileUpdate(String oldName, String newName) {
+
+        return isFileEqual(new File(oldName), new File(newName));
     }
 
     public static class FileNameAndExtension {

@@ -23,7 +23,7 @@
 
     <groupId>org.power.commons</groupId>
     <artifactId>commons-parent</artifactId>
-    <version>1.1.0-SNAPSHOT</version>
+    <version>1.0.0</version>
     <name>Power Commons Parent</name>
     <packaging>pom</packaging>
     <description>
@@ -46,10 +46,11 @@
         <!-- Common libs -->
         <jackson.version>2.6.0</jackson.version>
         <commons.lang.version>3.3.2</commons.lang.version>
+        <commons.io.version>2.4</commons.io.version>
         <commons.codec.version>1.10</commons.codec.version>
         <commons.pool.version>2.4.2</commons.pool.version>
         <guava.version>18.0</guava.version>
-        <gson.version>2.3</gson.version>
+        <gson.version>2.3.1</gson.version>
         <fastjson.version>1.1.39</fastjson.version>
         <jedis.version>2.7.3</jedis.version>
         <zookeeper_version>3.4.6</zookeeper_version>
@@ -118,6 +119,11 @@
                 <version>${commons.lang.version}</version>
             </dependency>
             <dependency>
+                <groupId>commons-io</groupId>
+                <artifactId>commons-io</artifactId>
+                <version>${commons.io.version}</version>
+            </dependency>
+            <dependency>
                 <groupId>commons-codec</groupId>
                 <artifactId>commons-codec</artifactId>
                 <version>${commons.codec.version}</version>
@@ -143,6 +149,13 @@
                 <groupId>com.fasterxml.jackson.core</groupId>
                 <artifactId>jackson-databind</artifactId>
                 <version>${jackson.version}</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>javax.servlet-api</artifactId>
+                <version>3.1.0</version>
                 <scope>provided</scope>
             </dependency>
 
